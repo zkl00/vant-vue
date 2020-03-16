@@ -6,7 +6,7 @@ export  function request(confing){
     return new Promise((resLove,resobj)=>{
         //创建axios实例
         const install = axios.create({
-            baseURL:"http://123.207.32.32:8000/api/wh",
+            baseURL:"http://123.207.32.32:1235555/api/wh",
         })
         //响应拦截
         install.interceptors.response.use((confing)=>{
