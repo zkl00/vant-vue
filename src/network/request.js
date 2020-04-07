@@ -6,11 +6,12 @@ export  function request(confing){
     return new Promise((resLove,resobj)=>{
         //创建axios实例
         const install = axios.create({
-            baseURL:"http://123.207.32.32:1235555/api/wh",
+
         })
         //响应拦截
-        install.interceptors.response.use((confing)=>{
-            return confing.data
+        install.interceptors.request.use((confing)=>{
+            // console.log(confing)
+            return confing
         })
         //请求拦截
         install.interceptors.response.use((confing)=>{
@@ -19,6 +20,7 @@ export  function request(confing){
 
         // 真正的请求拦截
         install(confing).then((res)=>{
+            // console.log(res)
             resLove(res)
         }).catch((error)=>{
             resobj(error)

@@ -1,7 +1,7 @@
 <template>
   <van-swipe :autoplay="3000" class="swipe">
     <van-swipe-item v-for="(item, index) in images" :key="index" class="swipe">
-      <img v-lazy="item.image" width="100%" height="100%" @load="loadImgeNew" />
+      <img v-lazy="item" width="100%" @load="loadImgeNew" />
     </van-swipe-item>
   </van-swipe>
 </template>
@@ -40,15 +40,10 @@ export default {
 <style scoped>
 .swipe {
   overflow: hidden;
-  height: 200px;
+  height: 300px;
 }
 .van-swipe {
   overflow: hidden;
-}
-.IMGdit {
-  /* width: 300px; */
-  width: 100%;
-  height: 300px;
 }
 </style>
 

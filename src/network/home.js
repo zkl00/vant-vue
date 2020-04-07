@@ -10,3 +10,9 @@ export const getHOmeGoodes = (type,page)=>request({
         page
     }
 })
+export const detailstList = (iid)=>request({
+    url:'/detail',
+    params:{
+        iid
+    }
+})

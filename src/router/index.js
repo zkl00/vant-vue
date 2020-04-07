@@ -5,7 +5,8 @@ import VueRouter from 'vue-router'
 const Home = () => import('../views/home/Home.vue')//首页
 const ClassFly = () => import('../views/classFly/ClassFly')//分类
 const Cart = ()=>import('../views/cart/Cart')//购物车
-const myMine = ()=>import('../views/mymine/myMine')
+const myMine = ()=>import('../views/mymine/myMine')//我的
+const Details =()=>import('../views/details/Details')
 
 
 Vue.use(VueRouter)
@@ -34,6 +35,11 @@ const routes = [
     path:'/mymine',
     name:'mymine',
     component:myMine
+  },
+  {
+    path:'/details',
+    name:'details',
+    component:Details
   },
   
 ]

@@ -18,6 +18,9 @@ export default {
                 return []
             }
         }
+    },
+    methods:{
+        
     }
 }
 </script>
@@ -27,10 +30,14 @@ export default {
     font-size: 14px;
     justify-content: space-between;
     text-align: center;
+    /* padding: 10px 0; */
     padding: 0 10px;
     padding-bottom: 10px;
     border-bottom: 8px solid #eeee;
     
+}
+.recommend-Warp{
+    padding: 10px 0;
 }
 .recommend-Warp img{
     width: 80px;

@@ -1,6 +1,5 @@
 <template>
     <div class="recommendImg">
-        <!-- <img src="" alt=""> -->
          <img src="../../assets/img/home//recommend_bg.jpg" alt="">
     </div>
 </template>
