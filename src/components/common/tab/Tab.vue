@@ -137,7 +137,7 @@ export default {
     left: 84%;
     width: 15px;
     height: 15px;
-    top: 2px;
+    top: 0px;
 }
 </style>
 

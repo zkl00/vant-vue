@@ -5,6 +5,9 @@ export const detailstList = (iid) => request({
         iid
     }
 })
+export const getCommints = ()=>request({
+    url:'/recommend'
+})
 // 标题
 export class Goods {
     constructor(itemInfo, columns, services) {

@@ -49,7 +49,8 @@ export default {
 }
 .price {
   color: #ff5777;
-  padding: 0 10px;
+  padding: 10px 10px;
+  font-size: 18px;
 }
 .newPrice {
   text-decoration: line-through;

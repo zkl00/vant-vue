@@ -89,12 +89,14 @@
 </template>
 <script>
 import { List, PullRefresh,Tab,Tabs } from "vant";
+import DetaileAction from '../details/children/DetaileAction'
 export default {
   components: {
     [List.name]: List,
     [PullRefresh.name]: PullRefresh,
     [Tab.name]:Tab,
-    [Tabs.name]:Tabs
+    [Tabs.name]:Tabs,
+    DetaileAction
   },
   data() {
     return {

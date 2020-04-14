@@ -25,13 +25,14 @@ export default {
   data() {
     return {
       deatil: ["商品", "参数", "评论", "推荐"],
-      curreindex: "0"
+      curreindex:0
     };
   },
   methods: {
     /**监听事件 */
     deatilClick(e) {
       this.curreindex = e;
+      this.$emit("DetaileClick",e)
     },
     backClick(){
         this.$router.back()

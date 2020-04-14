@@ -125,6 +125,7 @@ export default {
     },
     async GoodsList(type) {
       const page = this.goods[type].page + 1; //请求第一次的时候给page + 1
+      // console.log(page)
       const res = await getHOmeGoodes(type, page);
       this.goods[type].list.push(...res.data.list);
       this.goods[type].page += 1; //每次给type就是定义的pop 每次给自身+=1
