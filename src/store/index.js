@@ -16,8 +16,10 @@ export default new Vuex.Store({
       // console.log(lengthList)
       if (lengthList) {//第一次为undefined
         lengthList.count += 1
+        lengthList.counts += 100
       } else {//为undefined的走这里
         paly.count = 1
+        paly.counts = 100
         paly.checked = true
         states.countList.push(paly)
       }

@@ -2,7 +2,7 @@
   <div class="shop_wap" v-if="Object.keys(shoplist).length != 0">
     <div class="shpBox">
       <div class="checkbox">
-        <van-checkbox v-model="checked" @click="checkedClick(shoplist.checked)"></van-checkbox>
+        <van-checkbox v-model="checked" @click="checkedClick"></van-checkbox>
       </div>
       <div class="imgs">
         <img :src="shoplist.Url" alt />
@@ -12,7 +12,7 @@
         <p class="title">产品描述：{{shoplist.title}}</p>
         <div class="price">
           <p class="newprice">￥{{shoplist.newPrice}}</p>
-          <p>x{{shoplist.count}}</p>
+          <p class="count">x{{shoplist.count}}</p>
         </div>
       </div>
     </div>
@@ -35,16 +35,13 @@ export default {
   },
   data() {
     return {
-        checked:true,
-        aa:123
+       checked:this.shoplist.checked
     };
   },
   methods: {
     checkedClick(e) {
-        // console.log(object)
-        this.checked = !this.checked
-        // console.log(this.checked)
-    //   this.shoplist.checked = !this.shoplist.checked;
+        this.shoplist.checked = !this.shoplist.checked
+        // console.log(this.shoplist.checked)
     }
   }
 };
@@ -91,6 +88,10 @@ export default {
 }
 .newprice {
   color: orangered;
+  font-size: 18px;
+}
+.count{
+  font-size: 18px;
 }
 </style>
 

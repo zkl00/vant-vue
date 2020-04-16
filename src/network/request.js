@@ -6,7 +6,6 @@ export  function request(confing){
     return new Promise((resLove,resobj)=>{
         //创建axios实例
         const install = axios.create({
-            
         })
         //响应拦截
         install.interceptors.request.use((confing)=>{

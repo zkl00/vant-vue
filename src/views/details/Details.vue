@@ -36,6 +36,7 @@ import DetailCommentInfo from "./children/DetailCommentInfo";
 import itemRecommend from "./children/itemRecommend";
 import showImg from "../../components/content/showImg";
 import DetaileAction from "./children/DetaileAction";
+// import sukDist from './children/sukDist'
 
 export default {
   name: "Details",
@@ -50,7 +51,8 @@ export default {
     DetailCommentInfo,
     itemRecommend,
     showImg,
-    DetaileAction
+    DetaileAction,
+    // sukDist
   },
   data() {
     return {
