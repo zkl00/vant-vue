@@ -4,7 +4,7 @@
         <div class="itembox" v-for="(item,index) in content" :key="index">
             <div class="title">
                 <a :href="item.link"></a>
-                <img :src="item.image" alt="">
+                <img :src="item.image" alt="" @load="imgOng">
                 <p>{{item.title}}</p>
             </div>
         </div>
@@ -19,17 +19,22 @@ export default {
                 return []
             }
         }
+    },
+    methods:{
+        imgOng(){
+            this.$emit("imgLong")
+        },
     }
 }
 </script>
 <style scoped>
 .itemContnt{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    justify-content: space-around;
-    padding: 10px 0;
+    /* justify-content: space-between; */
+    padding: 10px  20px 10px 0;
 }
 .itembox{
     width: 33.3%;

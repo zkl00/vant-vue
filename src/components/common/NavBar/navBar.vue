@@ -31,9 +31,9 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style>
 .van-nav-bar__title{
-    color: white
+    color: white !important;
 }
 </style>
 

@@ -5,6 +5,7 @@
     <!-- <Tab @TabClik="TabClik" @newImgLonge="newImgLonge" v-show="hide" ref="contentTab1" class="filx"></Tab> -->
     <bettorScroll class="scroll" @onLond="onLond" @HieghtScrollemny="HieghtScrollemny" ref="scroll">
       <Swipe :images="banner" @loadImgeNew="loadImgeNew"></Swipe>
+      
       <Recommend :recommend="recommend" @newImgLong="newImgLong"></Recommend>
       <recommendImg></recommendImg>
       <Tab
@@ -27,6 +28,7 @@ import bettorScroll from "../../components/content/bettor-scroll";
 import showImg from "../../components/content/showImg";
 import { home, getHOmeGoodes } from "../../network/home";
 
+
 export default {
   components: {
     NavBar,
@@ -35,7 +37,7 @@ export default {
     recommendImg,
     Tab,
     bettorScroll,
-    showImg
+    showImg,
   },
   data() {
     return {
@@ -83,7 +85,7 @@ export default {
     },
     newImgLong() {},
     loadImgeNew() {
-      // console.log(this.$refs.contentTab.$el.offsetTop)
+      console.log(this.$refs.contentTab.$el.offsetTop)
       this.scrollTop = this.$refs.contentTab.$el.offsetTop;
     },
     /****
@@ -125,11 +127,15 @@ export default {
     },
     async GoodsList(type) {
       const page = this.goods[type].page + 1; //请求第一次的时候给page + 1
-      // console.log(page)
+
       const res = await getHOmeGoodes(type, page);
-      this.goods[type].list.push(...res.data.list);
-      this.goods[type].page += 1; //每次给type就是定义的pop 每次给自身+=1
-      this.$refs.scroll.emptyCentent(); //每次下拉一次就清空一次
+      let { success } = res;
+      if (success) {
+       this.$refs.contentTab.hide = false
+        this.goods[type].list.push(...res.data.list);
+        this.goods[type].page += 1; //每次给type就是定义的pop 每次给自身+=1
+        this.$refs.scroll.emptyCentent(); //每次下拉一次就清空一次
+      }
     }
   }
 };
